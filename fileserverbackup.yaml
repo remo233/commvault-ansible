@@ -11,10 +11,10 @@
     - name: Run a File System Backup for subclient 'user_subclient' of backupset 'user_backupset'
       commvault.ansible.file_servers.backup:
         webserver_hostname: "10.31.70.66"
-        client: "testclustr1"
+        client: "{{ client_name }}"
         agent_type: "File System"
         backupset: "defaultBackupSet"
-        backup_level: "incremental"
+        backup_level: "{{ backup_type }}"
         subclient: "default"
         commcell_username: "aman"
         commcell_password: "C@mmV@ult#07072024"
